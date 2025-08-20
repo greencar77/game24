@@ -39,23 +39,18 @@ def solve(arr):
 
 
 def getOperatedResult(a, b):
-    operation = None
-    for op in range(4):
-        if op == 0:
+    for op in ['+', '-', '*', '/']:
+        if op == '+':
             app = a + b
-            operation = '+'
-        elif op == 1:
+        elif op == '-':
             app = a - b
-            operation = '-'
-        elif op == 2:
+        elif op == '*':
             app = a * b
-            operation = '*'
-        elif op == 3:
+        elif op == '/':
             if b == 0:
                 continue
             app = a / b
-            operation = '/'
-        yield app, operation
+        yield app, op
 
 
 def pickPairCombination(arr):
